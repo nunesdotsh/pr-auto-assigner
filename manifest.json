@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "PR Auto Assigner",
+    "version": "1.0.0",
+    "description": "Automatically assigns you to your newly created GitHub Pull Requests",
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "action": {
+        "default_popup": "popup/popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://github.com/*/compare/*"
+            ],
+            "js": [
+                "src/content.js"
+            ]
+        }
+    ]
+}
